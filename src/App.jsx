@@ -161,20 +161,18 @@ function AutoScrollGallery() {
 
 function App() {
   return (
-    <Router>
-      <div className="min-h-screen bg-white font-serif">
-        <Navbar />
+    <div className="min-h-screen bg-white font-serif">
+      <Navbar />
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
 
-        <footer className="text-center py-8 border-t text-gray-500">
-          28arenterprises@gmail.com
-        </footer>
-      </div>
-    </Router>
+      <footer className="text-center py-8 border-t text-gray-500">
+        28arenterprises@gmail.com
+      </footer>
+    </div>
   );
 }
 
