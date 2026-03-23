@@ -27,6 +27,16 @@ const images = [
     src: "https://images.meesho.com/images/products/733131940/ds5nt_512.avif?width=512",
     link: "https://www.meesho.com/shirts-strips-shirts-new-formal-shirts-women-shirts-ladies-shirts/p/c4hk84",
   },
+  {
+    id: 6,
+    src: "https://images.meesho.com/images/products/462708198/6ond2_512.avif?width=512",
+    link: "https://www.meesho.com/stylish-designer-women-jeans/p/7nhfxi?ms=2&source=Meri+Shop",
+  },
+  {
+    id: 7,
+    src: "https://images.meesho.com/images/products/270179521/cws3l_512.avif?width=512",
+    link: "https://www.meesho.com/stylish-designer-women-jeans/p/7nhfxi?ms=2&source=Meri+Shop",
+  },
 ];
 
 function Navbar() {
