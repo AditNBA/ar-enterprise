@@ -84,7 +84,7 @@ function Home() {
     </>
   );
 }
-
+// aqddd
 function About() {
   return (
     <section className="px-4 md:px-8 py-16 max-w-5xl mx-auto">
