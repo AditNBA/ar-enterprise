@@ -161,7 +161,7 @@ function AutoScrollGallery() {
 
 function App() {
   return (
-    <Router basename="/ar-enterprise">
+    <Router>
       <div className="min-h-screen bg-white font-serif">
         <Navbar />
 
