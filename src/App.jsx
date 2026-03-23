@@ -1,49 +1,35 @@
 import { useState, useRef, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
-const navItems = [
-  "HOME",
-  "ABOUT",
-  "STYLING",
-  "VISUAL MERCHANDISING",
-  "CLIENT STYLING",
-  "TRAVEL PHOTOGRAPHY",
-];
-
 const images = [
   {
-    id: 674860,
+    id: 1,
     src: "https://images.meesho.com/images/products/439693850/nwx4x_512.avif?width=512",
-    alt: "fashion item 1",
-    link: "https://www.meesho.com/classic-elegant-women-jeans/p/79s5y2?ms=2&source=Meri+Shop",
+    link: "https://www.meesho.com/classic-elegant-women-jeans/p/79s5y2",
   },
   {
-    id: 674861,
+    id: 2,
     src: "https://images.meesho.com/images/products/307163145/gplhx_512.avif?width=512",
-    alt: "fashion item 2",
-    link: "https://www.meesho.com/classy-designer-women-jeans/p/52vkll?ms=2&source=Meri+Shop",
+    link: "https://www.meesho.com/classy-designer-women-jeans/p/52vkll",
   },
   {
-    id: 674862,
+    id: 3,
     src: "https://images.meesho.com/images/products/624153222/qgfdz_512.avif?width=512",
-    alt: "fashion item 3",
     link: "https://www.meesho.com/fancy-glamorous-women-shirts/p/ablrp",
   },
   {
-    id: 674863,
+    id: 4,
     src: "https://images.meesho.com/images/products/686684525/1tgrg_512.avif?width=512",
-    alt: "fashion item 4",
     link: "https://www.meesho.com/fancy-glamorous-women-shirts/p/bcu165",
   },
   {
-    id: 674863,
+    id: 5,
     src: "https://images.meesho.com/images/products/733131940/ds5nt_512.avif?width=512",
-    alt: "fashion item 5",
     link: "https://www.meesho.com/shirts-strips-shirts-new-formal-shirts-women-shirts-ladies-shirts/p/c4hk84",
   },
 ];
 
-function Navbar({ activeNav, setActiveNav }) {
+function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -57,18 +43,10 @@ function Navbar({ activeNav, setActiveNav }) {
         </button>
 
         <div className="hidden md:flex items-center gap-6">
-          <Link
-            to="/"
-            onClick={() => setActiveNav("HOME")}
-            className="text-xs tracking-widest"
-          >
+          <Link to="/" className="text-xs tracking-widest">
             HOME
           </Link>
-          <Link
-            to="/about"
-            onClick={() => setActiveNav("ABOUT")}
-            className="text-xs tracking-widest"
-          >
+          <Link to="/about" className="text-xs tracking-widest">
             ABOUT
           </Link>
         </div>
@@ -135,11 +113,11 @@ function About() {
 
 function AutoScrollGallery() {
   const scrollRef = useRef(null);
-  const intervalRef = useRef(null);
 
   useEffect(() => {
     const container = scrollRef.current;
-    intervalRef.current = setInterval(() => {
+
+    const interval = setInterval(() => {
       if (!container) return;
 
       if (
@@ -155,7 +133,7 @@ function AutoScrollGallery() {
       }
     }, 2000);
 
-    return () => clearInterval(intervalRef.current);
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -168,10 +146,11 @@ function AutoScrollGallery() {
           key={img.id}
           className="min-w-[75%] sm:min-w-[320px] md:min-w-[380px] lg:min-w-[420px]"
         >
-          <a href={img.link}>
+          <a href={img.link} target="_blank" rel="noopener noreferrer">
             <img
               src={img.src}
-              className="w-full min-h-[420px] object-cover rounded-xl shadow-md transition-transform duration-500 ease-in-out hover:scale-105"
+              alt=""
+              className="w-full min-h-[420px] object-cover rounded-xl shadow-md transition-transform duration-500 hover:scale-105"
             />
           </a>
         </div>
@@ -181,12 +160,10 @@ function AutoScrollGallery() {
 }
 
 function App() {
-  const [activeNav, setActiveNav] = useState("HOME");
-
   return (
-    <Router>
+    <Router basename="/ar-enterprise">
       <div className="min-h-screen bg-white font-serif">
-        <Navbar activeNav={activeNav} setActiveNav={setActiveNav} />
+        <Navbar />
 
         <Routes>
           <Route path="/" element={<Home />} />
@@ -194,7 +171,7 @@ function App() {
         </Routes>
 
         <footer className="text-center py-8 border-t text-gray-500">
-          © 2024 AR Enterprises
+          28arenterprises@gmail.com
         </footer>
       </div>
     </Router>
