@@ -35,7 +35,7 @@ const images = [
   {
     id: 7,
     src: "https://images.meesho.com/images/products/270179521/cws3l_512.avif?width=512",
-    link: "https://www.meesho.com/stylish-designer-women-jeans/p/7nhfxi?ms=2&source=Meri+Shop",
+    link: "https://www.meesho.com/georgette-top/p/4guvup?ms=2&source=Meri+Shop",
   },
 ];
 
